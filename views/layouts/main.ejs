@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= typeof title != 'undefined' ? title: 'Foodie Fusion - Made with Node.js' %></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  
+  <div class="container-xxl px-md-5 bg-white shadow-lg">
+    
+
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <a href="/" class="logo-link col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+        <img src="/img/logo.png" alt="Cooking Blog - Made with Node.js">
+      </a>
+
+      <ul class="nav col-12 col-md-auto mb-1 justify-content-center mb-md-0">
+        <li><a href="/" class="btn btn-sm btn-outline-dark btn-lg px-4 me-md-2">Home</a></li>
+        <li><a href="/about" class="btn btn-sm btn-outline-dark btn-lg px-4 me-md-2">About</a></li>
+        <li><a href="/submit-recipe" class="btn btn-sm btn-outline-dark btn-lg px-4 me-md-2">Submit</a></li>
+        <li><a href="/contact" class="btn btn-sm btn-outline-dark btn-lg px-4 me-md-2">Contact</a></li>
+      </ul>
+
+      <div class="col-md-3 text-end">
+        <form method="POST" action="/search" class="nav form">
+          <input type="search" name="searchTerm" placeholder="Search recipe..." aria-label="Search">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </header>
+    <main>
+      <%- body -%>
+    </main>
+    
+
+    <footer class="py-5">
+      <p>Made with ❤️ by Ayoub_nattah 💻 © 2023.</p>
+    </footer>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+  <script src="/js/script.js"></script>
+ 
+</body>
+</html>

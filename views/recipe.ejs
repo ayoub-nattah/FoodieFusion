@@ -1,0 +1,150 @@
+<% if(recipe != null ) { %>
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><%- recipe.name %></li>
+    </ol>
+  </nav>
+
+
+  <div class="row">
+
+    <div class="col-12 col-md-4">
+      <img src="/uploads/<%- recipe.image %>" class="img-fluid sticky-top" style="top: 20px;" alt="<%- recipe.name %>" loading="lazy">
+    </div>
+
+    <div class="col-12 col-md-8">
+      <div class="row">
+        <div class="col-12"><h1><%- recipe.name %></h1></div>
+        <div class="col-12 mb-4"><i class="bi bi-tag"></i> <%- recipe.category %></div>
+        <div class="col-12" style="white-space: pre-line;">
+          <h4>Cooking Instructions</h4>
+          <p class="recipe-description"><%- recipe.description %></p>
+        </div>
+      </div>
+
+      <div class="row pt-4">
+        <div class="col-12">
+          <h4>Ingredients</h4>
+          <ul class="list-group list-group-flush">
+            <% recipe.ingredients.forEach(function(ingredients, index){ %>
+              <li class="list-group-item"><%= ingredients %></li>
+            <% }) %>
+          </ul> 
+        </div>
+      </div>
+    </div>
+  </div>
+<% } else { %>
+  <p>No item found.</p>
+<% } %>
+<style>
+  /* Style the breadcrumb navigation bar */
+/* Style the breadcrumb navigation */
+/* Style the breadcrumb navigation */
+.breadcrumb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #010101;
+  border-radius: 5px;
+  padding: 10px 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.breadcrumb-item {
+  font-size: 14px;
+  color: #333;
+}
+
+.breadcrumb-item a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.breadcrumb-item.active {
+  font-weight: bold;
+}
+
+
+
+/* Style the recipe name and category */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0.8rem;
+  color: #333;
+}
+
+.col-12.mb-4 i {
+  margin-right: 0.8rem;
+  color: #010101;
+}
+
+/* Style the cooking instructions and ingredients list */
+h4 {
+  font-size: 2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+ul.list-group {
+  margin-bottom: 2.5rem;
+}
+
+/* Style the ingredients list items */
+ul.list-group-item {
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #555;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  border: none;
+  display: flex;
+  align-items: center;
+}
+
+ul.list-group-item::before {
+  content: "\2022";
+  color: #007bff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+/* Style the recipe image */
+/* Style the recipe image */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 2rem;
+  border-radius: 50%;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Add a hover effect to the recipe image */
+.img-fluid:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+}
+/* Style the recipe description */
+.recipe-description {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #777;
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+.recipe-description span {
+  font-weight: bold;
+  color: #333;
+}
+
+
+
+
+</style>
